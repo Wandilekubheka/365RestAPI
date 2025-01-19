@@ -27,14 +27,24 @@ public class WasteController {
         }
     }
 
-    @PostMapping
+    @PostMapping(path = "add")
     public Waste addWaste(@RequestBody Waste waste) {
         return waterActionsImp.addWaste(waste);
     }
 
-    @PutMapping
+    @PutMapping(path = "update")
     public Waste updateWaste(@RequestBody Waste waste) {
         return waterActionsImp.updateWaste(waste);
+    }
+
+    @DeleteMapping
+    public Waste deleteWaste(@RequestBody Waste waste) {
+        try{
+            return waterActionsImp.deleteWaste(waste);
+
+        }catch (Exception e){
+            return null;
+        }
     }
 
 
