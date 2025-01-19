@@ -11,4 +11,7 @@ public interface WasteActions {
     public Waste deleteWaste(Waste waste) throws ActionErrors;
     public Waste getWaste(int id) throws ActionErrors;
     public List<Waste> getAllWastes();
+    public Waste getWasteByName(String wasteName) throws ActionErrors;
+    public List<Waste> getWastesByCategory(String category) throws ActionErrors;
+
 }

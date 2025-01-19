@@ -1,5 +1,6 @@
 package com.enviro.assessment.grad001.wkubheka023.controller;
 
+import com.enviro.assessment.grad001.wkubheka023.core.errors.ActionErrors;
 import com.enviro.assessment.grad001.wkubheka023.core.model.Waste;
 import com.enviro.assessment.grad001.wkubheka023.service.WaterActionsImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,13 @@ public class WasteController {
         return waterActionsImp.getAllWastes();
     }
 
-    @GetMapping(path="/wastes/{id}")
+
+    @GetMapping(path = "search/{categoryString}")
+    public List<Waste> getWastesByCategory(@PathVariable String categoryString) throws ActionErrors {
+        return waterActionsImp.getWastesByCategory(categoryString);
+    }
+
+    @GetMapping(path="wastes/{id}")
     public Waste getWasteById(@PathVariable int id) {
         try{
             return waterActionsImp.getWaste(id);
