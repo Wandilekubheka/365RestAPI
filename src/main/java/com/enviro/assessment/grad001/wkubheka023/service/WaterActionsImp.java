@@ -57,8 +57,12 @@ public class WaterActionsImp implements   WasteActions {
     }
 
     @Override
-    public Waste getWasteByName(String wasteName) throws ActionErrors {
-        return null;
+    public List<Waste> getWastesByName(String wasteName) throws ActionErrors {
+        try{
+            return databaseAccess.getWasteByName(wasteName);
+        }catch (Exception e){
+            throw new ActionErrors("category not found");
+        }
     }
 
     @Override
@@ -66,7 +70,7 @@ public class WaterActionsImp implements   WasteActions {
         try{
             Category category1 = Category.valueOf(category);
             return databaseAccess.getWasteByCategory(category1);
-        }catch (Exception e){
+        }catch (IllegalArgumentException e){
             throw new ActionErrors("category not found");
         }
     }

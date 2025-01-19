@@ -10,5 +10,6 @@ import java.util.List;
 @Component
 public interface DatabaseAccess extends JpaRepository<Waste, Integer> {
     public List<Waste> getWasteByCategory(Category category);
+    public List<Waste> getWasteByName(String name);
 
 }
