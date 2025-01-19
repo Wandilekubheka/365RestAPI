@@ -8,18 +8,15 @@ import jakarta.persistence.Id;
 @Entity
 public class Waste {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
     private  String name;
     private  Category category;
+    private  String description;
 
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -36,5 +33,13 @@ public class Waste {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
