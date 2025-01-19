@@ -1,11 +1,14 @@
 package com.enviro.assessment.grad001.wkubheka023.core.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Waste {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private  int id;
     private  String name;
     private  Category category;
