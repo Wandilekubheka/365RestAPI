@@ -5,6 +5,6 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public interface DatabaseAccess extends .<Waste, Integer> {
+public interface DatabaseAccess extends JpaRepository<Waste, Integer> {
 
 }
