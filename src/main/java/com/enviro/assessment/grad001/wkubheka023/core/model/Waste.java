@@ -1,31 +1,27 @@
 package com.enviro.assessment.grad001.wkubheka023.core.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Waste {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
-    private  String name;
     private  Category category;
     private  String description;
+    @ElementCollection
+    private  List<String> disposalGuidelines;
+    @ElementCollection
+    private  List<String> recyclingTips;
 
 
     public int getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Category getCategory() {
         return category;
@@ -41,5 +37,21 @@ public class Waste {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<String> getDisposalGuidelines() {
+        return disposalGuidelines;
+    }
+
+    public void setDisposalGuidelines(List<String> disposalGuidelines) {
+        this.disposalGuidelines = disposalGuidelines;
+    }
+
+    public List<String> getRecyclingTips() {
+        return recyclingTips;
+    }
+
+    public void setRecyclingTips(List<String> recyclingTips) {
+        this.recyclingTips = recyclingTips;
     }
 }
