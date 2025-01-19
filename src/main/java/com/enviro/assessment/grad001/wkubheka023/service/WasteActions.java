@@ -1,6 +1,6 @@
 package com.enviro.assessment.grad001.wkubheka023.service;
 
-import com.enviro.assessment.grad001.wkubheka023.service.model.Waste;
+import com.enviro.assessment.grad001.wkubheka023.core.model.Waste;
 
 import java.util.List;
 

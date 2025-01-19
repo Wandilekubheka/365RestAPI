@@ -1,11 +1,9 @@
 package com.enviro.assessment.grad001.wkubheka023.dao;
-import com.enviro.assessment.grad001.wkubheka023.service.model.Waste;
+import com.enviro.assessment.grad001.wkubheka023.core.model.Waste;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface DatabaseAccess{
-    void save(Waste waste);
-    void update(Waste waste);
-    void delete(Waste waste);
-    List<Waste> findAll();
+public interface DatabaseAccess extends JpaRepository<Waste, Integer> {
+
 }
