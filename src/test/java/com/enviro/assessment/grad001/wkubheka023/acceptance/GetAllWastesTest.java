@@ -5,6 +5,7 @@ import com.enviro.assessment.grad001.wkubheka023.core.model.Waste;
 import com.enviro.assessment.grad001.wkubheka023.core.model.modelDeserializer;
 import kong.unirest.Body;
 import kong.unirest.HttpResponse;
+import kong.unirest.HttpStatus;
 import kong.unirest.Unirest;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,5 +53,25 @@ public class GetAllWastesTest {
                 assertEquals(1,3);
             }
         }
+    }
+    @Test
+    void addWaste() {
+        Waste waste = new Waste();
+        waste.setCategory(Category.metal);
+        waste.setDescription("Metal");
+//        String data = "{\n" +
+//                "    \"id\": 1,\n" +
+//                "    \"category\": \"plastic\",\n" +
+//                "    \"description\": \"Plastic bottle\",\n" +
+//                "    \"disposalGuidelines\": [\"Throw the plastic bottle in the designated plastic recycling bin\"],\n" +
+//                "    \"recyclingTips\": [\"Rinse out plastic bottles before recycling to remove contaminants\"]\n" +
+//                "}";
+
+        HttpResponse<String> response = Unirest.post("add").body(waste).asString();
+        System.out.println(response.getBody());
+//        if (response.getStatus() == HttpStatus.CREATED) {
+//
+//
+//        }
     }
 }
