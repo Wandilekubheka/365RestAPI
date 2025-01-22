@@ -3,7 +3,7 @@ package com.enviro.assessment.grad001.wkubheka023.service;
 import com.enviro.assessment.grad001.wkubheka023.core.errors.ActionErrors;
 import com.enviro.assessment.grad001.wkubheka023.core.model.Category;
 import com.enviro.assessment.grad001.wkubheka023.core.model.Waste;
-import com.enviro.assessment.grad001.wkubheka023.dao.DatabaseAccess;
+import com.enviro.assessment.grad001.wkubheka023.persistence.DatabaseAccess;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -54,15 +54,6 @@ public class WaterActionsImp implements   WasteActions {
     @Override
     public List<Waste> getAllWastes() {
         return databaseAccess.findAll();
-    }
-
-    @Override
-    public List<Waste> getWastesByName(String wasteName) throws ActionErrors {
-        try{
-            return databaseAccess.getWasteByName(wasteName);
-        }catch (Exception e){
-            throw new ActionErrors("category not found");
-        }
     }
 
     @Override

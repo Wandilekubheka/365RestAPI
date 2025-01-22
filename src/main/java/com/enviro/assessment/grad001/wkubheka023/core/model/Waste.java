@@ -9,7 +9,8 @@ public class Waste {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
-    private  Category category;
+    @Enumerated(EnumType.STRING) // Store enum as a string in the database
+    private Category category;
     private  String description;
     @ElementCollection
     private  List<String> disposalGuidelines;
