@@ -45,7 +45,7 @@ public class WasteController {
         return waterActionsImp.updateWaste(waste);
     }
 
-    @DeleteMapping
+    @DeleteMapping(path = "remove")
     public Waste deleteWaste(@RequestBody Waste waste) {
         try{
             return waterActionsImp.deleteWaste(waste);
