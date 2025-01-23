@@ -1,8 +1,8 @@
 package com.enviro.assessment.grad001.wkubheka023.unittest;
 
 import com.enviro.assessment.grad001.wkubheka023.persistence.DatabaseAccess;
-import com.enviro.assessment.grad001.wkubheka023.service.WasteActions;
-import com.enviro.assessment.grad001.wkubheka023.service.WasteActionsImp;
+import com.enviro.assessment.grad001.wkubheka023.service.waste.WasteActions;
+import com.enviro.assessment.grad001.wkubheka023.service.waste.WasteActionsImp;
 import org.junit.jupiter.api.BeforeAll;
 
 public class wasteActionTest {

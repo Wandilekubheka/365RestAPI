@@ -1,7 +1,6 @@
-package com.enviro.assessment.grad001.wkubheka023.service;
+package com.enviro.assessment.grad001.wkubheka023.service.waste;
 
 import com.enviro.assessment.grad001.wkubheka023.core.errors.ActionErrors;
-import com.enviro.assessment.grad001.wkubheka023.core.model.Category;
 import com.enviro.assessment.grad001.wkubheka023.core.model.Waste;
 import com.enviro.assessment.grad001.wkubheka023.persistence.DatabaseAccess;
 import org.springframework.stereotype.Component;
@@ -86,8 +85,7 @@ public class WasteActionsImp implements   WasteActions {
     public List<Waste> getWastesByCategory(String category) throws ActionErrors {
         try{
             // attempting to convert to enum in order to check if @param category is valid category
-//            Category category1 = Category.valueOf(category.toLowerCase());
-            return databaseAccess.getWasteByCategory(category1);
+            return databaseAccess.getWasteByCategory(category.toUpperCase());
         }catch (IllegalArgumentException e){
             // custom error handling
             throw new ActionErrors("category not found");

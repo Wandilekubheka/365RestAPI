@@ -1,4 +1,4 @@
-package com.enviro.assessment.grad001.wkubheka023.service;
+package com.enviro.assessment.grad001.wkubheka023.service.waste;
 
 import com.enviro.assessment.grad001.wkubheka023.core.errors.ActionErrors;
 import com.enviro.assessment.grad001.wkubheka023.core.model.Waste;
