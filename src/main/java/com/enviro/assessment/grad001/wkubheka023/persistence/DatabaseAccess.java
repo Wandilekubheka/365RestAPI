@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 
+/***
+ * inherit crud functionality from jpa Repository class
+ ***/
 @Component
 public interface DatabaseAccess extends JpaRepository<Waste, Integer> {
     public List<Waste> getWasteByCategory(Category category);

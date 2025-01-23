@@ -6,7 +6,7 @@ import com.enviro.assessment.grad001.wkubheka023.core.model.Waste;
 import java.util.List;
 
 public interface WasteActions {
-    public Waste addWaste(Waste waste);
+    public Waste addWaste(Waste waste) throws ActionErrors;
     public Waste updateWaste(Waste waste);
     public Waste deleteWaste(Waste waste) throws ActionErrors;
     public Waste getWaste(int id) throws ActionErrors;

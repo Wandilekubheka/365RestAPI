@@ -12,10 +12,8 @@ public class Waste {
     @Enumerated(EnumType.STRING) // Store enum as a string in the database
     private Category category;
     private  String description;
-    @ElementCollection
-    private  List<String> disposalGuidelines;
-    @ElementCollection
-    private  List<String> recyclingTips;
+    private  String disposalGuidelines;
+    private  String recyclingTips;
 
 
     public int getId() {
@@ -40,19 +38,27 @@ public class Waste {
         this.description = description;
     }
 
-    public List<String> getDisposalGuidelines() {
+    public String getDisposalGuidelines() {
         return disposalGuidelines;
     }
 
-    public void setDisposalGuidelines(List<String> disposalGuidelines) {
+    public void setDisposalGuidelines(String disposalGuidelines) {
         this.disposalGuidelines = disposalGuidelines;
     }
 
-    public List<String> getRecyclingTips() {
+    public String getRecyclingTips() {
         return recyclingTips;
     }
 
-    public void setRecyclingTips(List<String> recyclingTips) {
+    public void setRecyclingTips(String recyclingTips) {
         this.recyclingTips = recyclingTips;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Waste waste = (Waste) o;
+        return description.equals(waste.description) && category.equals(waste.category);
     }
 }

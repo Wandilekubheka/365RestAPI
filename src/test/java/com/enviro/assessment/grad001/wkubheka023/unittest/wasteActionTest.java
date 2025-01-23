@@ -2,7 +2,7 @@ package com.enviro.assessment.grad001.wkubheka023.unittest;
 
 import com.enviro.assessment.grad001.wkubheka023.persistence.DatabaseAccess;
 import com.enviro.assessment.grad001.wkubheka023.service.WasteActions;
-import com.enviro.assessment.grad001.wkubheka023.service.WaterActionsImp;
+import com.enviro.assessment.grad001.wkubheka023.service.WasteActionsImp;
 import org.junit.jupiter.api.BeforeAll;
 
 public class wasteActionTest {
@@ -11,6 +11,6 @@ public class wasteActionTest {
     @BeforeAll
     public static void setUpBeforeClass() throws Exception {
         DatabaseAccess databaseAccess = null;
-        wasteActions = new WaterActionsImp(databaseAccess);
+        wasteActions = new WasteActionsImp(databaseAccess);
     }
 }
