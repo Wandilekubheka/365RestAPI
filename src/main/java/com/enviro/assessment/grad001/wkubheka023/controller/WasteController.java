@@ -38,7 +38,7 @@ public class WasteController {
     }
     @ResponseStatus(code = HttpStatus.CREATED)
     @PostMapping(path = "/add")
-    public Waste addWaste(@RequestBody Waste waste) {
+    public Waste addWaste(@RequestBody Waste waste) throws ActionErrors {
         return waterActionsImp.addWaste(waste);
     }
     @ResponseStatus(code = HttpStatus.NO_CONTENT)

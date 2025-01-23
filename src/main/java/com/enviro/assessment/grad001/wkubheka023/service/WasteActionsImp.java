@@ -86,7 +86,7 @@ public class WasteActionsImp implements   WasteActions {
     public List<Waste> getWastesByCategory(String category) throws ActionErrors {
         try{
             // attempting to convert to enum in order to check if @param category is valid category
-            Category category1 = Category.valueOf(category.toLowerCase());
+//            Category category1 = Category.valueOf(category.toLowerCase());
             return databaseAccess.getWasteByCategory(category1);
         }catch (IllegalArgumentException e){
             // custom error handling
