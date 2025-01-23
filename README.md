@@ -8,6 +8,10 @@ This application is designed for waste management, allowing users to manage and 
 
 ---
 
+
+## NOTE
+This project using uses an in memory database there for no data will be present initially.
+
 ## Endpoints Overview
 
 ### 1. **CategoryController**
